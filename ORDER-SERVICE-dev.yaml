@@ -1,1 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    io.github.resilience4j: DEBUG
