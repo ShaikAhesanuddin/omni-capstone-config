@@ -1,1 +1,8 @@
+logging:
+  level:
+    root: WARN
 
+management:
+  tracing:
+    sampling:
+      probability: 0.1 
