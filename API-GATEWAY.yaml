@@ -51,7 +51,7 @@ spring:
                 required: true
                 roles:
                    - ADMIN
-                   - USER
+                   
 
 jwt:
   secret: ${JWT_SECRET}
