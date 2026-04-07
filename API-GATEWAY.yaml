@@ -12,20 +12,46 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/api/v1/auth/**
+          filters:
+            - name: JwtAuthFilter
+              args:
+                required: false
 
         - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/**
+          filters:
+            - name: JwtAuthFilter
+              args:
+                required: true
+                roles:
+                   - ADMIN
+                   - USER
+                   
         - id: ORDER-SERVICE
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/v1/orders/**
+          filters:
+            - name: JwtAuthFilter
+              args:
+                required: true
+                roles:
+                   - ADMIN
+                   - USER
 
         - id: INVENTORY-SERVICE
           uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/v1/inventory/**
+          filters:
+            - name: JwtAuthFilter
+              args:
+                required: true
+                roles:
+                   - ADMIN
+                   - USER
 
 jwt:
   secret: ${JWT_SECRET}
