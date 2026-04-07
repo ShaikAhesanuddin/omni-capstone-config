@@ -26,3 +26,7 @@ spring:
           uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/v1/inventory/**
+
+jwt:
+  secret: ${JWT_SECRET}
+
