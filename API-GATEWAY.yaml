@@ -41,29 +41,26 @@ spring:
                    - ADMIN
                    - USER
 
-        - id: INVENTORY-READ
-          uri: lb://INVENTORY-SERVICE
-          predicates:
-            - Path=/api/v1/inventory/**
-            - Method=GET
-          filters:
-            - name: JwtAuthFilter
-              args:
-                required: true
-                roles: [USER, ADMIN]
-
       
-        - id: INVENTORY-WRITE
+        - id: INVENTORY-ADMIN
           uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/v1/inventory/**
-            - Method=POST,PUT,PATCH,DELETE
           filters:
             - name: JwtAuthFilter
               args:
                 required: true
                 roles: [ADMIN]
-                   
+
+        - id: VIEW-PRODUCTS
+          uri: lb://INVENTORY-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - name: JwtAuthFilter
+              args:
+                required: false
+              
 
 jwt:
   secret: ${JWT_SECRET}
