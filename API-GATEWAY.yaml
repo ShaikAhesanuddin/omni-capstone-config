@@ -7,6 +7,21 @@ spring:
 
   cloud:
     gateway:
+
+    
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5174"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+
       routes:
         - id: AUTH-SERVICE
           uri: lb://AUTH-SERVICE
@@ -26,9 +41,9 @@ spring:
               args:
                 required: true
                 roles:
-                   - ADMIN
-                   - USER
-                   
+                  - ADMIN
+                  - USER
+
         - id: ORDER-SERVICE
           uri: lb://ORDER-SERVICE
           predicates:
@@ -38,10 +53,9 @@ spring:
               args:
                 required: true
                 roles:
-                   - ADMIN
-                   - USER
+                  - ADMIN
+                  - USER
 
-      
         - id: INVENTORY-ADMIN
           uri: lb://INVENTORY-SERVICE
           predicates:
@@ -60,8 +74,6 @@ spring:
             - name: JwtAuthFilter
               args:
                 required: false
-              
 
 jwt:
   secret: ${JWT_SECRET}
-
