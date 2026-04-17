@@ -53,7 +53,8 @@ resilience4j:
           - feign.RetryableException
 
         ignore-exceptions:
-          - java.lang.RuntimeException
+          - com.ahesan.ecommerce.order_service.exception.InsufficientStockException
+          - com.ahesan.ecommerce.order_service.exception.ExternalServiceException
 
   ratelimiter:
     instances:
