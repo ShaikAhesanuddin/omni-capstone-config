@@ -49,6 +49,12 @@ resilience4j:
         max-attempts: 3
         wait-duration: 3s
 
+        retry-exceptions:
+          - feign.RetryableException
+
+        ignore-exceptions:
+          - java.lang.RuntimeException
+
   ratelimiter:
     instances:
       orderRateLimiter:
