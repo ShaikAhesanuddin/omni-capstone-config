@@ -33,6 +33,11 @@ resilience4j:
   circuitbreaker:
     instances:
       inventoryService:
+        ignore-exceptions:
+          - com.ahesan.ecommerce.order_service.exception.InsufficientStockException
+          - com.ahesan.ecommerce.order_service.exception.ExternalServiceException
+        record-exceptions:
+          - feign.RetryableException
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
         failureRateThreshold: 50
