@@ -1,6 +1,8 @@
 logging:
   level:
-    root: DEBUG
+    org.apache.http: WARN
+    reactor.netty: WARN
+    org.springframework.cloud: INFO
 
 management:
   tracing:
