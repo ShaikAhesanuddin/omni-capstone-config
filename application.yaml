@@ -1,6 +1,6 @@
 spring:
   elasticsearch:
-    uris: http://localhost:9200
+    uris: http://elasticsearch:9200
 
 eureka:
   instance:
@@ -10,7 +10,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://service-registry:8761/eureka
 
 management:
   tracing:
@@ -18,7 +18,7 @@ management:
       probability: 1.0 
 
   zipkin:
-    endpoint: http://localhost:9411/api/v2/spans
+    endpoint: http://zipkin:9411/api/v2/spans
 
   endpoints:
     web:
