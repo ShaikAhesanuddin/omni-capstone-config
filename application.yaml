@@ -1,6 +1,5 @@
 spring:
   elasticsearch:
-    uris: http://elasticsearch:9200
 
 eureka:
   instance:
@@ -9,19 +8,16 @@ eureka:
 management:
   tracing:
     sampling:
-      probability: 1.0 
+      probability: 1.0
 
-  zipkin:
-    endpoint: http://zipkin:9411/api/v2/spans
+endpoints:
+  web:
+    exposure:
+      include: health, info, prometheus
 
-  endpoints:
-    web:
-      exposure:
-        include: health, info, prometheus
-
-  endpoint:
-    health:
-      show-details: always
+endpoint:
+  health:
+    show-details: always
 
 logging:
   level:
