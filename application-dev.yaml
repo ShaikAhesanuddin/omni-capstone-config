@@ -1,3 +1,10 @@
+spring:
+  elasticsearch:
+    uris: http://localhost:9200
+
+zipkin:
+  endpoint: http://localhost:9411/api/v2/spans
+
 logging:
   level:
     root: INFO
