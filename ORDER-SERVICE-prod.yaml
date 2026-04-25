@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    url: jdbc:mysql://mysql-order:3306/order_db
+    username: root
+    password: ${DATABASE_PASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: validate
