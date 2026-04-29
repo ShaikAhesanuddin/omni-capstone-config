@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: optional:aws-secretsmanager:bazario/order-service
   jpa:
     hibernate:
       ddl-auto: update
