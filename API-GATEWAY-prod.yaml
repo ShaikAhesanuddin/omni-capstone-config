@@ -1,3 +1,7 @@
+spring:
+  config:
+    import: optional:aws-secretsmanager:bazario/api-gateway/jwt
+
 logging:
   level:
     org.springframework.cloud.gateway: WARN
