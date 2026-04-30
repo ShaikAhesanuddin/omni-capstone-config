@@ -2,24 +2,33 @@ spring:
   elasticsearch:
     uris: http://elasticsearch:9200
 
-zipkin:
-    tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
+eureka:
+  client:
+    service-url:
+      defaultZone: http://service-registry:8761/eureka
 
 logstash:
   host: logstash
 
 logging:
   level:
-    root: WARN
+    root: INFO  
 
 management:
   tracing:
     enabled: true
     sampling:
-      probability: 1.0 
+      probability: 1.0   
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://service-registry:8761/eureka
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+
+  endpoint:
+    health:
+      show-details: always
