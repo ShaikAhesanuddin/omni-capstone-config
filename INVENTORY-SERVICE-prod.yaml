@@ -1,6 +1,4 @@
 spring:
-  config:
-    import: optional:aws-secretsmanager:bazario/inventory-service
   jpa:
     hibernate:
       ddl-auto: update
