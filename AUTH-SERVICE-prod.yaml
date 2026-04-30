@@ -1,7 +1,4 @@
-spring:
-  config:
-    import: optional:aws-secretsmanager:bazario/auth-service
-    
+spring:    
   jpa:
     hibernate:
       ddl-auto: update
