@@ -8,11 +8,7 @@ eureka:
       defaultZone: http://service-registry:8761/eureka
 
 logstash:
-  host: logstash
-
-logging:
-  level:
-    root: INFO  
+  host: logstash 
 
 management:
   tracing:
@@ -24,11 +20,3 @@ management:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
 
-  endpoints:
-    web:
-      exposure:
-        include: health, info, prometheus
-
-  endpoint:
-    health:
-      show-details: always
