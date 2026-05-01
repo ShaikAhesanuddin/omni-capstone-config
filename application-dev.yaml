@@ -5,12 +5,6 @@ spring:
 logstash:
   host: localhost
 
-logging:
-  level:
-    root: INFO
-    org.springframework: INFO
-    org.springframework.web: INFO
-
 management:
   zipkin:
     tracing:
