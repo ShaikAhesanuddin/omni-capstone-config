@@ -13,7 +13,9 @@ spring:
         add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:5173"
+            allowedOrigins:
+              - "http://localhost:5173"
+              - "https://bazarioz.netlify.app"
             allowedMethods:
               - GET
               - POST
