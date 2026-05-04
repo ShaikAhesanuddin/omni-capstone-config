@@ -67,8 +67,8 @@ spring:
           filters:
             - name: JwtAuthFilter
               args:
-                required: true
-                roles: [ADMIN]
+                required: false
+                # roles: [ADMIN]
 
         - id: VIEW-PRODUCTS
           uri: lb://INVENTORY-SERVICE
