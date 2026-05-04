@@ -3,11 +3,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
-    
-  datasource:
-    hikari:
-      initializationFailTimeout: 60000
-      connectionTimeout: 30000
 
 logging:
   level:
