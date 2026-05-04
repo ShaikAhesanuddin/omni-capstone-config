@@ -1,9 +1,4 @@
 spring:
-  datasource:
-    hikari:
-      initializationFailTimeout: 60000
-      connectionTimeout: 30000
-      
   jpa:
     hibernate:
       ddl-auto: update
