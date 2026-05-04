@@ -1,4 +1,14 @@
 spring:
+  datasource:
+    hikari:
+      initializationFailTimeout: 60000
+      maximum-pool-size: 5
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      leak-detection-threshold: 2000
+      
   elasticsearch:
     uris: http://elasticsearch:9200
 
