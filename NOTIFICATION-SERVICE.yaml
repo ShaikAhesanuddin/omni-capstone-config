@@ -1,2 +1,2 @@
-SERVER:
-  PORT: 8085
+server:
+  port: 8085
